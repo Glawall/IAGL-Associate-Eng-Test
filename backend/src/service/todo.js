@@ -4,10 +4,13 @@ const todoService = (repository) => {
       return await repository.getTodos();
     },
     addTodo: async (task) => {
-      if (!task) {
-        throw new Error("Task cannot be empty");
-      }
       return await repository.addTodo(task);
+    },
+    updateTodo: async (index, updatedTask) => {
+      return await repository.updateTodo(index, updatedTask);
+    },
+    removeTodo: async (index) => {
+      return await repository.removeTodo(index);
     },
   };
 };
